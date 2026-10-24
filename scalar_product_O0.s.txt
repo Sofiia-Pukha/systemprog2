@@ -1,0 +1,47 @@
+__Z14scalar_productRKNSt3__16vectorIfNS_9allocatorIfEEEES5_: ; @_Z14scalar_productRKNSt3__16vectorIfNS_9allocatorIfEEEES5_
+	.cfi_startproc
+; %bb.0:
+	sub	sp, sp, #48
+	stp	x29, x30, [sp, #32]             ; 16-byte Folded Spill
+	add	x29, sp, #32
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	stur	x0, [x29, #-8]
+	str	x1, [sp, #16]
+	movi	d0, #0000000000000000
+	str	s0, [sp, #12]
+	str	wzr, [sp, #8]
+	b	LBB2_1
+LBB2_1:                                 ; =>This Inner Loop Header: Depth=1
+	ldr	w8, [sp, #8]
+	mov	w9, #61568                      ; =0xf080
+	movk	w9, #762, lsl #16
+	subs	w8, w8, w9
+	b.ge	LBB2_4
+	b	LBB2_2
+LBB2_2:                                 ;   in Loop: Header=BB2_1 Depth=1
+	ldur	x0, [x29, #-8]
+	ldrsw	x1, [sp, #8]
+	bl	__ZNKSt3__16vectorIfNS_9allocatorIfEEEixB8ne200100Em
+	ldr	s0, [x0]
+	str	s0, [sp, #4]                    ; 4-byte Folded Spill
+	ldr	x0, [sp, #16]
+	ldrsw	x1, [sp, #8]
+	bl	__ZNKSt3__16vectorIfNS_9allocatorIfEEEixB8ne200100Em
+	ldr	s0, [sp, #4]                    ; 4-byte Folded Reload
+	ldr	s1, [x0]
+	ldr	s2, [sp, #12]
+	fmadd	s0, s0, s1, s2
+	str	s0, [sp, #12]
+	b	LBB2_3
+LBB2_3:                                 ;   in Loop: Header=BB2_1 Depth=1
+	ldr	w8, [sp, #8]
+	add	w8, w8, #1
+	str	w8, [sp, #8]
+	b	LBB2_1
+LBB2_4:
+	ldr	s0, [sp, #12]
+	ldp	x29, x30, [sp, #32]             ; 16-byte Folded Reload
+	add	sp, sp, #48
+	ret
