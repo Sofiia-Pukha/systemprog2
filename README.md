@@ -1,5 +1,6 @@
 # Лабораторна робота 2. Пуха Софія, ТК-31
 
+## Посилання на відео: https://youtu.be/hmihoRKJxy8?feature=shared
 ## Програма
 `dot.cpp`: скалярний добуток двох масивів по 50 млн `float` (C++).
 Є дві функції, `fill_arrays` і `scalar_product`. Збірка:
